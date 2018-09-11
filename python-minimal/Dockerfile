@@ -31,6 +31,7 @@ RUN pip3 install -U pip
 # Add user tx with specified uid
 RUN useradd -u $uid -m -s /bin/bash tx
 ENV HOME /home/tx
+ENV PATH="${HOME}/.local/bin:${PATH}"
 WORKDIR /home/tx
 
 RUN chown -R tx /home/tx
